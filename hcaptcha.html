@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>hCaptcha Verification</title>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <script>
+    function onVerify(token) {
+      HCaptcha.postMessage(token);
+    }
+  </script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1c1c2d;
+    }
+  </style>
+</head>
+<body>
+  <form onsubmit="return false;">
+    <div class="h-captcha"
+         data-sitekey="4b0e190e-054c-44c2-8c5a-f976fcca3efc"
+         data-callback="onVerify"
+         data-theme="dark">
+    </div>
+  </form>
+</body>
+</html>
